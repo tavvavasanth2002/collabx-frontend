@@ -1,0 +1,66 @@
+<div class="notification-container d-flex justify-content-center align-items-center vh-100">
+  <div class="card shadow-lg border-0 w-75">
+    <div class="card-header bg-dark text-white text-center py-3">
+      <h3 class="mb-0 fw-bold">📩 Sent Notifications</h3>
+    </div>
+
+    <div class="card-body p-4">
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle text-center mb-0">
+          <thead class="table-dark">
+            <tr>
+              <th>Project</th>
+              <th>Subject</th>
+              <th>Issues</th>
+              <th>Tasks</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="let data of result"
+              (click)="openModal(data)"
+              data-bs-toggle="modal"
+              data-bs-target="#notificationModal"
+              class="clickable-row"
+            >
+              <td>{{data.projectName}}</td>
+              <td>{{data.subject}}</td>
+              <td>{{data.issues}}</td>
+              <td>{{data.tasks}}</td>
+              <td>{{data.date}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content shadow-lg border-0 rounded-4">
+      <div class="modal-header bg-dark text-white rounded-top-4">
+        <h5 class="modal-title" id="modalLabel">{{selectedNotification.projectName}} – Details</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body p-4">
+        <p><strong>From:</strong> {{selectedNotification.fromemail}}</p>
+        <p><strong>To:</strong> {{selectedNotification.toemail}}</p>
+        <p><strong>Subject:</strong> {{selectedNotification.subject}}</p>
+        <p><strong>Priority:</strong> {{selectedNotification.priorty}}</p>
+        <p><strong>Tasks:</strong> {{selectedNotification.tasks}}</p>
+        <p><strong>Issues:</strong> {{selectedNotification.issues}}</p>
+        <p><strong>Message:</strong></p>
+        <div class="border rounded p-3 bg-light">{{selectedNotification.message}}</div>
+        <p class="mt-3 text-muted"><strong>Date:</strong> {{selectedNotification.date}}</p>
+      </div>
+
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

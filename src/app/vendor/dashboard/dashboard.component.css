@@ -1,0 +1,72 @@
+.icon-badge i {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon-badge:hover i {
+  transform: scale(1.2) rotate(-2deg);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.icon-badge:hover {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 rgba(0,0,0,0); }
+  50% { box-shadow: 0 0 10px rgba(0,0,0,0.15); }
+  100% { box-shadow: 0 0 0 rgba(0,0,0,0); }
+}
+
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15);
+}
+/* Chart Card */
+.chart-card {
+  border-radius: 15px;
+  background-color: #fff;
+}
+.chart-card canvas {
+  transition: transform 0.3s ease;
+}
+.chart-card canvas:hover {
+  transform: scale(1.05);
+}
+
+/* Notification Section */
+.notification-card {
+  border-radius: 15px;
+  background-color: #fff;
+  overflow: hidden;
+}
+.notification-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+.notification-list::-webkit-scrollbar {
+  width: 6px;
+}
+.notification-list::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+.notification-item {
+  cursor: pointer;
+  padding: 15px 20px;
+  border-bottom: 1px solid #f1f1f1;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+}
+.notification-item:hover {
+  background-color: #f8f9fa;
+  border-left: 4px solid #007bff;
+}
+.notification-content {
+  max-width: 80%;
+}

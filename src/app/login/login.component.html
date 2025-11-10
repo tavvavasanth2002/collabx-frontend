@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-md-4">
+        <h2>Login</h2>
+        <hr>
+        <form action="" [formGroup]="loginForm" (ngSubmit)="submitNow()">
+            <div class="form-group">
+                <label for="" class="form-label">username:</label>
+                <input type="text" class="form-control" formControlName="userName">
+            </div>
+            <div class="form-group">
+                <label for="" class="form-label">Password:</label>
+                <input type="password" class="form-control" formControlName="password">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn-lg bg-success text-white">Login</button>
+                <button type="reset" class="btn-lg bg-danger text-white">Reset</button>
+            </div>
+        </form>
+    </div>
+</div>

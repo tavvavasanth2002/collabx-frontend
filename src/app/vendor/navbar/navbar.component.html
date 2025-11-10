@@ -1,0 +1,34 @@
+<!-- Top Navbar (Always Visible) -->
+<nav class="navbar">
+  <button class="menu-btn" (click)="toggleSidebar()">
+    {{ sidebarOpen ? '✖' : '☰' }}
+  </button>
+  <a [routerLink]="['/users/dashboard', company]" class="text-decoration-none text-white">
+    <h2 class="portal-title">User Portal</h2>
+  </a>
+</nav>
+
+<!-- Sidebar -->
+<div class="sidebar" [class.open]="sidebarOpen">
+  <h2 class="ms-5">CollabX</h2>
+  <div class="sidebar-header text-center py-4">
+    <img src="assets/company-logo.png" alt="Company Logo" class="sidebar-logo" />
+    <h4 class="text-white mt-2 mb-0">{{ company }}</h4>
+  </div>
+
+  <ul>
+    <li [routerLink]="['/users/dashboard', company]" routerLinkActive="active" (click)="toggleSidebar()">Dashboard</li>
+    <li [routerLink]="['/users/project', company]" routerLinkActive="active" (click)="toggleSidebar()">Projects</li>
+    <li [routerLink]="['/users/reports', company]" routerLinkActive="active" (click)="toggleSidebar()">Reports</li>
+    <li [routerLink]="['/users/sentmail', company]" routerLinkActive="active" (click)="toggleSidebar()">Sent Mail</li>
+    <li [routerLink]="['/users/logout']" (click)="logOut()">Logout</li>
+  </ul>
+</div>
+
+<!-- Overlay -->
+<div class="overlay" *ngIf="sidebarOpen" (click)="toggleSidebar()"></div>
+
+<!-- Page Content -->
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
