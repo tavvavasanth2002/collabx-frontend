@@ -59,8 +59,12 @@ export class DashboardComponent implements OnInit {
 
     const email = sessionStorage.getItem("email");
     if (email) {
-      this.db.returnEmail(email).subscribe((data) => {
+      this.db.returnEmail(email,this.page,this.limit).subscribe((data) => {
         this.notification = data;
+        if(this.notification.length==0){
+          this.page--;
+          this.ngOnInit();
+        }
       });
     }
   }
@@ -104,5 +108,15 @@ export class DashboardComponent implements OnInit {
 
   openModal(data: any) {
     this.selectedNotification = { ...data };
+  }
+  page=1;
+  limit=5;
+  prev(){
+    this.page--;
+    this.ngOnInit()
+  }
+  next(){
+    this.page++;
+    this.ngOnInit();
   }
 }

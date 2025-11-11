@@ -17,7 +17,7 @@ export class ReportsComponent {
   result:any;
   email:any;
   submitNow(){
-    this.reportForm.value.date=Date()
+    this.reportForm.value.date=new Date().toISOString().split('T')[0];
     this.db.sendNotification(this.reportForm.value).subscribe((data)=>{
     this.result=data;
     alert(this.result.message)

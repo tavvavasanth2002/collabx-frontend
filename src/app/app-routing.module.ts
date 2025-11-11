@@ -7,6 +7,7 @@ import { ProjectsComponent } from './vendor/projects/projects.component';
 import { ReportsComponent } from './vendor/reports/reports.component';
 import { SentnotificationsComponent } from './vendor/sentnotifications/sentnotifications.component';
 import { authGuard } from './auth.guard';
+import { ProjectStatusComponent } from './vendor/project-status/project-status.component';
 
 
   
@@ -20,7 +21,8 @@ const routes: Routes = [
       { path: 'dashboard/:comp', component: DashboardComponent ,canActivate:[authGuard]},
       { path: 'project/:comp', component: ProjectsComponent ,canActivate:[authGuard]},
       { path: 'reports/:comp', component: ReportsComponent ,canActivate:[authGuard]},
-      { path: 'sentmail/:comp', component: SentnotificationsComponent, canActivate:[authGuard]}
+      { path: 'sentmail/:comp', component: SentnotificationsComponent, canActivate:[authGuard]},
+      { path: 'projectStatus/:status', component:ProjectStatusComponent, canActivate:[authGuard]}
     ],
   },
   { path: '**', redirectTo: '' } // fallback

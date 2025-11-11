@@ -22,6 +22,7 @@ export class LoginComponent {
     console.log(this.loginForm.value)
     this.log.getTokens(this.loginForm.value).subscribe((data)=>{
       this.result=data;
+      alert(this.result.message)
       if(this.result.token){
         if(this.result.role=="vendor"){
           sessionStorage.setItem("vendorLogin",this.result.token)

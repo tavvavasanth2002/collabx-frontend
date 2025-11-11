@@ -22,8 +22,8 @@ export class DashboardService {
   undecidedProjects(company:any){
     return this.http.get<any[]>(`http://localhost:4300/undecidedProjects/${company}`)
   }
-  returnEmail(email:any){
-    return this.http.get(`http://localhost:4300/returnemail/${email}`)
+  returnEmail(email:any,page:any,limit:any){
+    return this.http.get(`http://localhost:4300/returnemail/${email}?page=${page}&limit=${limit}`)
   }
   updateprojects(obj:any,name:any){
     return this.http.put(`http://localhost:4300/updateProject/${name}`,obj)

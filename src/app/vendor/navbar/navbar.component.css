@@ -107,7 +107,7 @@
   top: 0;
   width: 100%;
   z-index: 1000;
-  margin-left: 120px;
+  margin-left: 0px;
 }
 
 /* Keep the menu button on the left */
@@ -136,4 +136,8 @@
 /* Optional hover effect */
 .portal-link:hover .portal-title {
   color: #1abc9c;
+}
+img{
+  width:100px;
+  border-radius: 100%;
 }

@@ -21,6 +21,7 @@ export class NavbarComponent implements OnInit {
     this.sidebarOpen = !this.sidebarOpen;
   }
   logOut(){
+    sessionStorage.clear()
     this.router.navigateByUrl("/");
   }
 }

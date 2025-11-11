@@ -1,1 +1,26 @@
-<p>project-status works!</p>
+<section class="mb-5 pt-5">
+    <h3 class="text-center fw-bold text-success">Projects</h3>
+    <hr class="mb-4">
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover align-middle shadow-sm">
+        <thead class="table-success text-center">
+          <tr>
+            <th>Project Name</th>
+            <th>Company</th>
+            <th>Priority</th>
+            <th>Delivery Time</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of projects">
+            <td>{{data.projectName}}</td>
+            <td>{{data.parentCompany}} → {{data.vendorCompany}}</td>
+            <td><span class="badge bg-light text-dark">{{data.projectPriority}}</span></td>
+            <td>{{data.projectTime}}</td>
+            <td><span class="badge bg-success">{{data.projectStatus}}</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>

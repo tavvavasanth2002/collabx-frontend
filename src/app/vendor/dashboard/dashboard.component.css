@@ -70,3 +70,31 @@
 .notification-content {
   max-width: 80%;
 }
+.hover-shadow:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+.notification-item {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-left: 4px solid #0d6efd;
+  background-color: #f8f9fa;
+}
+
+.notification-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #e9f5ff;
+}
+.card-header {
+  background: linear-gradient(90deg, #198754, #28a745);
+  color: white;
+  border-bottom: 2px solid #145c32;
+}
+
+canvas {
+  transition: transform 0.3s ease;
+}
+
+canvas:hover {
+  transform: scale(1.02);
+}
