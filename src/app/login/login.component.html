@@ -1,0 +1,30 @@
+<div class="login-container">
+  <div class="overlay"></div>
+
+  
+  <button class="home-btn" (click)="goHome()">
+    ← Back to Home
+  </button>
+
+  <div class="login-box shadow-lg p-4">
+    <h3 class="text-center mb-4 fw-bold text-success">Welcome to CollabX</h3>
+    <p class="text-center text-secondary mb-4">Sign in to continue your collaboration</p>
+
+    <form [formGroup]="loginForm" (ngSubmit)="checkLogin()">
+      <div class="mb-3">
+        <label>Email or Username</label>
+        <input type="text" class="form-control" formControlName="username" placeholder="Enter your email or username">
+      </div>
+
+      <div class="mb-3">
+        <label>Password</label>
+        <input type="password" class="form-control" formControlName="password" placeholder="Enter password">
+      </div>
+
+      <div class="d-flex justify-content-between mt-4">
+        <button type="submit" class="btn btn-success w-50 me-2">Login</button>
+        <button type="button" class="btn btn-outline-secondary w-50" (click)="cancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+.hover-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+}
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+h5 {
+  color: #0056b3;
+}
+select.form-select {
+  border-radius: 10px;
+  border: 1px solid #007bff;
+}

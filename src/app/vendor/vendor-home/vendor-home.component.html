@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <h3>Welcome {{username}} (Startup Vendor)</h3>
+
+  <div class="row text-center mt-4">
+    <div class="col-md-3" *ngFor="let stat of stats">
+      <div class="card shadow-sm p-3">
+        <h5>{{stat.title}}</h5>
+        <h2 class="text-success">{{stat.value}}</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <h5>Project Summary</h5>
+      <canvas id="vendorChart"></canvas>
+    </div>
+
+    <div class="col-md-6">
+      <h5>Notifications from MNC</h5>
+      <div class="border rounded p-3" style="height:250px; overflow-y:auto;">
+        <div *ngFor="let msg of messages" class="alert alert-info p-2 mb-2">
+          <strong>{{msg.sender}}</strong>: {{msg.text}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

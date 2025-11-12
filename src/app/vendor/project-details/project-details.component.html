@@ -1,0 +1,37 @@
+<div class="container mt-4">
+  <h3>Project Details</h3>
+  <table class="table table-bordered">
+    <thead>
+      <tr><th>Name</th><th>MNC</th><th>Status</th><th>Actions</th></tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of projects">
+        <td>{{p.name}}</td>
+        <td>{{p.mnc}}</td>
+        <td>{{p.status}}</td>
+        <td>
+          <button class="btn btn-primary btn-sm" (click)="selectProject(p)" data-bs-toggle="modal" data-bs-target="#detailModal">
+            View
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="detailModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>{{selected.name}} Details</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>MNC:</strong> {{selected.mnc}}</p>
+        <p><strong>Status:</strong> {{selected.status}}</p>
+        <p><strong>Description:</strong> {{selected.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>

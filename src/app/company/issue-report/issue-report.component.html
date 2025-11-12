@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <h3 class="mb-3 text-primary">Issue Report & Communication</h3>
+  
+  
+  <form [formGroup]="issueForm" (ngSubmit)="sendMessage()" class="border rounded p-4 shadow-sm bg-light">
+    <div class="mb-3">
+      <label for="receiver" class="form-label fw-semibold">Send To</label>
+      <select id="receiver" formControlName="receiver" class="form-select">
+        <option value="vendor">Vendor Team</option>
+        <option value="company">Internal Team</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="message" class="form-label fw-semibold">Message / Issue</label>
+      <textarea id="message" class="form-control" formControlName="message" rows="3"></textarea>
+    </div>
+    <button class="btn btn-primary" type="submit">Send Message</button>
+  </form>
+
+  
+  <div class="mt-5">
+    <h5 class="text-success">Messages Received from Vendors</h5>
+    <div class="border rounded p-3 bg-white shadow-sm" style="height: 250px; overflow-y: auto;">
+      <div *ngIf="messages.length === 0" class="text-muted">No messages received yet.</div>
+      <div *ngFor="let msg of messages" class="alert alert-info p-2 mb-2">
+        <strong>{{msg.sender | titlecase}}:</strong> {{msg.text}}
+      </div>
+    </div>
+  </div>
+</div>

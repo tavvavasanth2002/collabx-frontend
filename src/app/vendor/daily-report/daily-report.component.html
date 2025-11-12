@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <h3>Daily Report</h3>
+  <form [formGroup]="reportForm" (ngSubmit)="submitReport()">
+    <div class="mb-3">
+      <label>Project Name</label>
+      <input class="form-control" formControlName="project">
+    </div>
+    <div class="mb-3">
+      <label>Summary</label>
+      <textarea class="form-control" formControlName="summary"></textarea>
+    </div>
+    <div class="mb-3">
+      <label>Progress (%)</label>
+      <input type="number" class="form-control" formControlName="progress">
+    </div>
+    <button class="btn btn-primary">Send Report</button>
+  </form>
+
+  <h5 class="mt-4">Reports Sent</h5>
+  <table class="table table-bordered mt-3">
+    <thead><tr><th>Project</th><th>Progress</th><th>Summary</th></tr></thead>
+    <tbody>
+      <tr *ngFor="let r of reports">
+        <td>{{r.project}}</td>
+        <td>{{r.progress}}%</td>
+        <td>{{r.summary}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

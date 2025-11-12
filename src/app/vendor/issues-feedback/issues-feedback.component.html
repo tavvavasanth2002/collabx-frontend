@@ -1,0 +1,18 @@
+<div class="container mt-4">
+  <h3>Issues / Feedback</h3>
+
+  <form [formGroup]="issueForm" (ngSubmit)="sendIssue()">
+    <div class="mb-3">
+      <label>Message / Issue</label>
+      <textarea formControlName="message" class="form-control"></textarea>
+    </div>
+    <button class="btn btn-success">Send to MNC</button>
+  </form>
+
+  <h5 class="mt-4">Your Sent Issues</h5>
+  <div class="border p-3 rounded" style="height:250px; overflow-y:auto;">
+    <div *ngFor="let msg of sentIssues" class="alert alert-secondary">
+      {{msg.text}}
+    </div>
+  </div>
+</div>

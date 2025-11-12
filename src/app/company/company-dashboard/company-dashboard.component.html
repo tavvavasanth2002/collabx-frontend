@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+  <a class="navbar-brand fw-bold">CollabX - MNC Portal</a>
+  <ul class="navbar-nav ms-auto">
+    <li class="nav-item"><a routerLink="/company/dashboard" class="nav-link">Dashboard</a></li>
+    <li class="nav-item"><a routerLink="/company/add" class="nav-link">Add Project</a></li>
+    <li class="nav-item"><a routerLink="/company/compare" class="nav-link">Vendor Comparison</a></li>
+    <li class="nav-item"><a routerLink="/company/issues" class="nav-link">Issues</a></li>
+    <li class="nav-item"><a (click)="logout()" class="nav-link text-danger">Logout</a></li>
+  </ul>
+</nav>
+
+<div class="container mt-4">
+  <router-outlet></router-outlet> 
+</div>

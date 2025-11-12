@@ -1,0 +1,27 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h3 class="fw-bold text-primary">Vendor Comparison</h3>
+    <div>
+      <label class="me-2 fw-semibold">Sort by:</label>
+      <select class="form-select d-inline-block w-auto" (change)="sortVendors($event)">
+        <option value="rating">Rating</option>
+        <option value="completed">Completed Projects</option>
+        <option value="cost">Average Cost</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row">
+    <div *ngFor="let v of vendors" class="col-md-4 mb-4">
+      <div class="card shadow-sm border-0 p-3 hover-card">
+        <h5 class="fw-bold">{{v.name}}</h5>
+        <p class="text-muted mb-1"><strong>Specialization:</strong> {{v.specialization}}</p>
+        <p class="mb-1"><strong>Rating:</strong> ⭐ {{v.rating}}</p>
+        <p class="mb-1"><strong>Completed Projects:</strong> {{v.completedProjects}}</p>
+        <p class="mb-1"><strong>Ongoing Projects:</strong> {{v.ongoingProjects}}</p>
+        <p class="mb-1"><strong>Average Cost:</strong> {{v.avgCost}}</p>
+        <p class="small text-secondary mt-2"><em>"{{v.feedback}}"</em></p>
+      </div>
+    </div>
+  </div>
+</div>
