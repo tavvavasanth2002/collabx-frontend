@@ -1,0 +1,51 @@
+/* Use a clean, beautiful Google font for placeholders */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400&display=swap');
+
+.form-control {
+  border-radius: 0.6rem;
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.2s ease-in-out;
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+}
+
+/* Focus effect */
+.form-control:focus {
+  border-color: #0d6efd;
+  background-color: #fff;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+/* Beautiful placeholder style ✨ */
+::placeholder {
+  color: #888 !important;
+  font-style: italic;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.3px;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+/* Card look */
+.card {
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+/* Gradient header */
+.card-header {
+  background: linear-gradient(90deg, #007bff, #6610f2);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/* Buttons */
+button.btn {
+  border-radius: 0.6rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}

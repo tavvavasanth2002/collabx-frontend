@@ -2,7 +2,7 @@
   <div class="row g-4 text-center ">
     <div class="col-6 col-md-3">
       <div class="project-card p-4 bg-light rounded shadow-sm position-relative hover-shadow">
-        <a routerLink="/users/projectStatus/undecided" class="text-decoration-none">
+        <a routerLink="/parent/status/undecided" class="text-decoration-none">
           <i class="fa-solid fa-file text-primary" style="font-size: 4rem;"></i>
           <span class="position-absolute top-0 end-0 translate-middle badge rounded-pill bg-primary">
             {{undecided.length}}
@@ -13,7 +13,7 @@
     </div>
     <div class="col-6 col-md-3">
       <div class="project-card p-4 bg-light rounded shadow-sm position-relative hover-shadow">
-        <a routerLink="/users/projectStatus/complete" class="text-decoration-none">
+        <a routerLink="/parent/status/complete" class="text-decoration-none">
           <i class="fa-solid fa-file text-success" style="font-size: 4rem;"></i>
           <span class="position-absolute top-0 end-0 translate-middle badge rounded-pill bg-success">
             {{completed.length}}
@@ -24,7 +24,7 @@
     </div>
     <div class="col-6 col-md-3">
       <div class=" project-card p-4 bg-light rounded shadow-sm position-relative hover-shadow">
-        <a routerLink="/users/projectStatus/progress" class="text-decoration-none">
+        <a routerLink="/parent/status/progress" class="text-decoration-none">
           <i class="fa-solid fa-file text-warning" style="font-size: 4rem;"></i>
           <span class="position-absolute top-0 end-0 translate-middle badge rounded-pill bg-warning text-dark">
             {{progress.length}}
@@ -35,7 +35,7 @@
     </div>
     <div class="col-6 col-md-3">
       <div class="project-card p-4 bg-light rounded shadow-sm position-relative hover-shadow">
-        <a routerLink="/users/projectStatus/reject" class="text-decoration-none">
+        <a routerLink="/parent/status/reject" class="text-decoration-none">
           <i class="fa-solid fa-file text-danger" style="font-size: 4rem;"></i>
           <span class="position-absolute top-0 end-0 translate-middle badge rounded-pill bg-danger">
             {{reject.length}}

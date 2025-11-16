@@ -22,7 +22,6 @@ export class LoginComponent {
     console.log(this.loginForm.value)
     this.log.getTokens(this.loginForm.value).subscribe((data)=>{
       this.result=data;
-      alert(this.result.message)
       if(this.result.token){
         if(this.result.role=="vendor"){
           sessionStorage.setItem("vendorLogin",this.result.token)
@@ -34,8 +33,15 @@ export class LoginComponent {
         }
         else{
           sessionStorage.setItem("adminLogin",this.result.token)
-          
+          sessionStorage.setItem("email",this.result.email);
+          sessionStorage.setItem("company",this.result.company);
+          let comp=this.result.company;
+          this.router.navigateByUrl(`/parent/${comp}`)
+          alert(this.result.message)          
         }
+      }
+      else{
+        alert(this.result.message);
       }
     })
     this.loginForm.reset();

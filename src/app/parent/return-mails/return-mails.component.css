@@ -1,0 +1,48 @@
+.notification-container {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 40px;
+}
+
+/* Card styling */
+.card {
+  border-radius: 20px;
+  background: #ffffff;
+}
+
+/* Table styling */
+.table th {
+  background-color: #212529 !important;
+  color: #ffffff;
+  vertical-align: middle;
+  font-weight: 600;
+}
+
+.table td {
+  color: #343a40;
+}
+
+/* Hover effect for rows */
+.clickable-row {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.clickable-row:hover {
+  background-color: #f1f1f1;
+  transform: scale(1.01);
+}
+
+/* Modal refinement */
+.modal-content {
+  border-radius: 20px;
+}
+.modal-body {
+  font-size: 15px;
+  color: #212529;
+  background-color: #fff;
+}
+.modal-header {
+  border-bottom: none;
+}
+.modal-footer {
+  border-top: none;
+}

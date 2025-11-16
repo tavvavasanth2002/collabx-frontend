@@ -17,11 +17,11 @@
   </div>
 
   <ul>
-    <li [routerLink]="['/users/dashboard', company]" routerLinkActive="active" (click)="toggleSidebar()">Dashboard</li>
-    <li [routerLink]="['/users/project', company]" routerLinkActive="active" (click)="toggleSidebar()">Projects</li>
-    <li [routerLink]="['/users/reports', company]" routerLinkActive="active" (click)="toggleSidebar()">Reports</li>
-    <li [routerLink]="['/users/sentmail', company]" routerLinkActive="active" (click)="toggleSidebar()">Sent Mail</li>
-    <li [routerLink]="['/users/logout']" (click)="logOut()">Logout</li>
+    <li [routerLink]="['/users/dashboard', company]" routerLinkActive="active" (click)="toggleSidebar()"><i class="fa-solid fa-inbox"></i> Dashboard</li>
+    <li [routerLink]="['/users/project', company]" routerLinkActive="active" (click)="toggleSidebar()"><i class="fa-solid fa-copy"></i> Projects</li>
+    <li [routerLink]="['/users/reports', company]" routerLinkActive="active" (click)="toggleSidebar()"><i class="fa-solid fa-bug"></i> Reports</li>
+    <li [routerLink]="['/users/sentmail', company]" routerLinkActive="active" (click)="toggleSidebar()"><i class="fa-brands fa-telegram"></i> Sent Mail</li>
+    <li [routerLink]="['/users/logout']" (click)="logOut()"><i class="fa-solid fa-right-from-bracket"></i> Logout</li>
   </ul>
 </div>
 

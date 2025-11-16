@@ -14,6 +14,14 @@ import { ProjectsComponent } from './vendor/projects/projects.component';
 import { IssuesComponent } from './vendor/issues/issues.component';
 import { ProjectStatusComponent } from './vendor/project-status/project-status.component';
 import { SentnotificationsComponent } from './vendor/sentnotifications/sentnotifications.component';
+import { NavComponent } from './parent/nav/nav.component';
+import { ParentdashboardComponent } from './parent/parentdashboard/parentdashboard.component';
+import { AddProjectComponent } from './parent/add-project/add-project.component';
+import { CompanyComponent } from './parent/company/company.component';
+import { ReturnReportsComponent } from './parent/return-reports/return-reports.component';
+import { ReturnMailsComponent } from './parent/return-mails/return-mails.component';
+import { AllprojectsComponent } from './parent/allprojects/allprojects.component';
+import { StatusComponent } from './parent/status/status.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +33,15 @@ import { SentnotificationsComponent } from './vendor/sentnotifications/sentnotif
     ProjectsComponent,
     IssuesComponent,
     ProjectStatusComponent,
-    SentnotificationsComponent
+    SentnotificationsComponent,
+    NavComponent,
+    ParentdashboardComponent,
+    AddProjectComponent,
+    CompanyComponent,
+    ReturnReportsComponent,
+    ReturnMailsComponent,
+    AllprojectsComponent,
+    StatusComponent
   ],
   imports: [
     BrowserModule,
