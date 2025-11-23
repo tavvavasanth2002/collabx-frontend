@@ -28,4 +28,10 @@ export class ParentService {
   updateprojects(obj:any,name:any){
     return this.http.put(`http://localhost:4300/updateProject/${name}`,obj)
   }
+  addProjects(obj:any){
+    return this.http.post('http://localhost:4300/addProject',obj)
+  }
+  listCompany(){
+    return this.http.get('http://localhost:4300/listCompany')
+  }
 }

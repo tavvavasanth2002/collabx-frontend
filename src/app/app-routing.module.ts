@@ -16,6 +16,7 @@ import { ReturnMailsComponent } from './parent/return-mails/return-mails.compone
 import { ReturnReportsComponent } from './parent/return-reports/return-reports.component';
 import { AllprojectsComponent } from './parent/allprojects/allprojects.component';
 import { StatusComponent } from './parent/status/status.component';
+import { admnGuard } from './admn.guard';
 
 
   
@@ -35,14 +36,14 @@ const routes: Routes = [
   },
   {path:"parent",component:NavComponent,
     children:[
-      {path:':comp',component:ParentdashboardComponent},
-      {path:'parentdashboard/:comp',component:ParentdashboardComponent},
-      {path:'addProject/:comp',component:AddProjectComponent},
-      {path:'company/:comp',component:CompanyComponent},
-      {path:'returnmails/:comp',component:ReturnMailsComponent},
-      {path:'returnreports/:comp',component:ReturnReportsComponent},
-      {path:'allprojects/:comp',component:AllprojectsComponent},
-      {path:'status/:status',component:StatusComponent}
+      {path:':comp',component:ParentdashboardComponent ,canActivate:[admnGuard]},
+      {path:'parentdashboard/:comp',component:ParentdashboardComponent ,canActivate:[admnGuard]},
+      {path:'addProject/:comp',component:AddProjectComponent  ,canActivate:[admnGuard]},
+      {path:'company/:comp',component:CompanyComponent  ,canActivate:[admnGuard]},
+      {path:'returnmails/:comp',component:ReturnMailsComponent  ,canActivate:[admnGuard]},
+      {path:'returnreports/:comp',component:ReturnReportsComponent  ,canActivate:[admnGuard]},
+      {path:'allprojects/:comp',component:AllprojectsComponent  ,canActivate:[admnGuard]},
+      {path:'status/:status',component:StatusComponent  ,canActivate:[admnGuard]}
     ]
   },
   { path: '**', redirectTo: '' } // fallback

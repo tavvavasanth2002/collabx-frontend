@@ -1,2 +1,50 @@
-<p class="pt-5
-">company works!</p>
+<div class="row">
+  <div class="col-12 py-2">
+    <h3 class="text-center my-4 fw-bold text-gradient">Company Performance Dashboard</h3>
+    <hr>
+  </div>
+
+  <div class="col-md-6 col-lg-4 mb-4" *ngFor="let data of alldetails">
+    <div class="card performance-card h-100">
+      <div class="card-body p-4">
+        <!-- Company Header -->
+        <div class="d-flex align-items-center mb-3">
+          <div class="icon-circle me-3">
+            <i class="bi bi-building"></i>
+          </div>
+          <div>
+            <h5 class="card-title mb-0 fw-bold">{{data.companyName}}</h5>
+            <small class="text-muted">
+              <i class="bi bi-envelope"></i> {{data.email}} <br>
+              <i class="bi bi-telephone"></i> {{data.phone}}
+            </small>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+          <div class="stat-box undecided">
+            <i class="bi bi-question-circle"></i>
+            <span class="fw-bold"> {{data.undecided}}</span>
+            <small> Undecided</small>
+          </div>
+          <div class="stat-box completed">
+            <i class="bi bi-check-circle"></i>
+            <span class="fw-bold"> {{data.completed}}</span>
+            <small> Completed</small>
+          </div>
+          <div class="stat-box inprogress">
+            <i class="bi bi-hourglass-split"></i>
+            <span class="fw-bold"> {{data.progress}}</span>
+            <small> In Progress</small>
+          </div>
+          <div class="stat-box rejected">
+            <i class="bi bi-x-circle"></i>
+            <span class="fw-bold"> {{data.reject}}</span>
+            <small> Rejected</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

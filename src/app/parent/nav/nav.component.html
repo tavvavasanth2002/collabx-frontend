@@ -4,7 +4,7 @@
     {{ sidebarOpen ? '✖' : '☰' }}
   </button>
   <a [routerLink]="['/users/dashboard', company]" class="text-decoration-none text-white">
-    <h2 class="portal-title">Parent Portal</h2>
+    <h2 class="portal-title ps-5">Parent Portal</h2>
   </a>
 </nav>
 
@@ -18,9 +18,9 @@
 
   <ul>
     <li [routerLink]="['/parent/parentdashboard', company]" routerLinkActive="active" (click)="toggleSidebar()"><i class="fa-solid fa-inbox"></i> Dashboard</li>
-    <li [routerLink]="['/parent/addProject',company]" routerLinkActive="active" (click)="toggleSidebar()">Add Project</li>
+    <li [routerLink]="['/parent/addProject',company]" routerLinkActive="active" (click)="toggleSidebar()"><i class="fa-solid fa-file-circle-plus"></i> Add Project</li>
     <li [routerLink]="['/parent/allprojects', company]" routerLinkActive="active" (click)="toggleSidebar()"><i class="fa-solid fa-copy"></i> Projects</li>
-    <li [routerLink]="['/parent/company',company]" routerLinkActive="active" (click)="toggleSidebar()">Company</li>
+    <li [routerLink]="['/parent/company',company]" routerLinkActive="active" (click)="toggleSidebar()"><i class="fa-solid fa-user-group"></i> Company</li>
     <li [routerLink]="['/parent/returnreports', company]" routerLinkActive="active" (click)="toggleSidebar()"><i class="fa-solid fa-bug"></i> Feedback</li>
     <li [routerLink]="['/parent/returnmails', company]" routerLinkActive="active" (click)="toggleSidebar()"><i class="fa-brands fa-telegram"></i> Sent Mails</li>
     <li [routerLink]="['/parent/logout']" (click)="logOut()"><i class="fa-solid fa-right-from-bracket"></i> Logout</li>

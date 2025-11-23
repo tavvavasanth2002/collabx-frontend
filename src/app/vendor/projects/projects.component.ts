@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DashboardService } from '../../services/dashboard.service';
 import { ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-projects',
@@ -41,7 +42,11 @@ export class ProjectsComponent {
     
     this.db.updateprojects(data,data.projectName).subscribe((i)=>{
       this.result=i;
-      alert(this.result.message)
+      Swal.fire({
+  title: "Congrats",
+  text: "Updated Successfully",
+  icon: "success"
+});
       this.ngOnInit()
     })
   }

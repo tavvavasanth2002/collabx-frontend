@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginservicesService } from '../services/loginservices.service';
 import { JsonPipe } from '@angular/common';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -29,7 +30,12 @@ export class LoginComponent {
           sessionStorage.setItem("company",this.result.company);
           let comp=this.result.company
           this.router.navigateByUrl(`/users/${comp}`)
-          alert(this.result.message)
+          Swal.fire({
+  title: "Welcome",
+  text: "Vendor Login!",
+  icon: "success"
+});
+
         }
         else{
           sessionStorage.setItem("adminLogin",this.result.token)
@@ -37,11 +43,21 @@ export class LoginComponent {
           sessionStorage.setItem("company",this.result.company);
           let comp=this.result.company;
           this.router.navigateByUrl(`/parent/${comp}`)
-          alert(this.result.message)          
+          Swal.fire({
+  title: "Welcome",
+  text: "Admin Login Success",
+  icon: "success"
+});
+         
         }
       }
       else{
-        alert(this.result.message);
+        Swal.fire({
+  icon: "error",
+  title: "Oops...",
+  text: this.result.message,
+
+});
       }
     })
     this.loginForm.reset();

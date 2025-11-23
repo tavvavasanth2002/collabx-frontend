@@ -1,0 +1,61 @@
+.text-gradient {
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.performance-card {
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #ffffff, #f9f9f9);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.performance-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+}
+
+.icon-circle {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.stat-box {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 500;
+  transition: transform 0.2s ease-in-out;
+}
+.stat-box:hover {
+  transform: scale(1.05);
+}
+
+.stat-box.undecided {
+  background: linear-gradient(135deg, #868f96, #596164);
+}
+.stat-box.completed {
+  background: linear-gradient(135deg, #56ab2f, #a8e063);
+}
+.stat-box.inprogress {
+  background: linear-gradient(135deg, #36d1dc, #5b86e5);
+}
+.stat-box.rejected {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}

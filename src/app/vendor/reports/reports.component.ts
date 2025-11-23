@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import { DashboardService } from '../../services/dashboard.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-reports',
@@ -21,7 +22,7 @@ export class ReportsComponent {
     this.db.sendNotification(this.reportForm.value).subscribe((data)=>{
     this.result=data;
     alert(this.result.message)
-    this.reportForm.reset()
+    Swal.fire(this.result.message);
     })
   }
   ngOnInit(){

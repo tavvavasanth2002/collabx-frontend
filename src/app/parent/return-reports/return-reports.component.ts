@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { DashboardService } from '../../services/dashboard.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-return-reports',
@@ -19,7 +20,8 @@ export class ReturnReportsComponent {
       this.reportForm.value.date=new Date().toISOString().split('T')[0];
       this.db.sendNotification(this.reportForm.value).subscribe((data)=>{
       this.result=data;
-      alert(this.result.message)
+      Swal.fire(this.result.message);
+
       this.reportForm.reset()
       })
     }
