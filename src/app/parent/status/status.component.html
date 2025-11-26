@@ -10,7 +10,6 @@
           <th scope="col">Company</th>
           <th scope="col">Priority</th>
           <th scope="col">Delivery Time</th>
-          <th scope="col">Status</th>
         </tr>
       </thead>
       <tbody>
@@ -19,16 +18,7 @@
           <td>{{ data.parentCompany }} <span class="text-muted">→</span> {{ data.vendorCompany }}</td>
           <td><span class="badge bg-light text-dark">{{ data.projectPriority }}</span></td>
           <td>{{ data.projectTime }}</td>
-          <td>
-            <span class="badge" [ngClass]="{
-              'bg-success': data.projectStatus === 'Complete',
-              'bg-warning text-dark': data.projectStatus === 'In Progress',
-              'bg-secondary': data.projectStatus === 'Undecided',
-              'bg-danger': data.projectStatus === 'Rejected'
-            }">
-              {{ data.projectStatus }}
-            </span>
-          </td>
+          
         </tr>
       </tbody>
     </table>

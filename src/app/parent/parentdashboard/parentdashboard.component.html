@@ -60,7 +60,11 @@
           <h5 class="mb-0 fw-bold">📊 Performance Overview</h5>
         </div>
         <div class="card-body d-flex justify-content-center align-items-center" style="height: 400px;">
-          <canvas baseChart [data]="pieChartData" [type]="pieChartType"></canvas>
+          <canvas baseChart 
+        [data]="barChartData" 
+        [options]="barChartOptions" 
+        type="bar">
+        </canvas>
         </div>
       </div>
     </div>

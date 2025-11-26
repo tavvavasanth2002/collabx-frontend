@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { ChartData, ChartType } from 'chart.js';
+import { ChartData, ChartType, ChartOptions } from 'chart.js';
 import { LoginservicesService } from '../../services/loginservices.service';
 import { ActivatedRoute } from '@angular/router';
 import { ParentService } from '../../services/parent.service';
+
 
 @Component({
   selector: 'app-parentdashboard',
@@ -30,21 +31,58 @@ user: any;
     date: ""
   };
 
-  pieChartType: ChartType = 'pie';
-  pieChartData: ChartData<'pie', number[], string | string[]> = {
-    labels: ['Completed', 'In Progress', 'Rejected'],
-    datasets: [
-      {
-        data: [0, 0, 0],
-        backgroundColor: ['#28a745', '#ffc107', '#dc3545']
+  barChartType: ChartType = 'bar';
+  barChartOptions: ChartOptions<'bar'> = {
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: {
+      display: false
+    },
+    tooltip: {
+      callbacks: {
+        label: (ctx) => `${ctx.dataset.label}: ${ctx.raw} projects`
       }
-    ]
-  };
+    }
+  },
+  scales: {
+    x: {
+      grid: {
+        display: false
+      }
+    },
+    y: {
+      beginAtZero: true
+    }
+  }
+};
+
+  barChartData: ChartData<'bar', number[], string | string[]> = {
+  labels: ['Completed', 'In Progress', 'Rejected'],
+  datasets: [
+    {
+      label: 'Projects',
+      data: [0, 0, 0],
+      backgroundColor: [
+        'rgba(40,167,69,0.8)',   // green
+        'rgba(255,193,7,0.8)',   // yellow
+        'rgba(220,53,69,0.8)'    // red
+      ],
+      borderRadius: 8, // rounded corners
+      hoverBackgroundColor: [
+        'rgba(40,167,69,1)',
+        'rgba(255,193,7,1)',
+        'rgba(220,53,69,1)'
+      ]
+    }
+  ]
+};
+
 
   constructor(
     private log: LoginservicesService,
     private bs: ActivatedRoute,
-    private db: ParentService
+    private db: ParentService,
   ) {}
 
   ngOnInit() {
@@ -88,20 +126,23 @@ user: any;
   }
 
   updateChart() {
-    this.pieChartData = {
-      labels: ['Completed', 'In Progress', 'Rejected'],
-      datasets: [
-        {
-          data: [
-            this.completed.length,
-            this.progress.length,
-            this.reject.length
-          ],
-          backgroundColor: ['#28a745', '#ffc107', '#dc3545']
-        }
-      ]
-    };
-  }
+  this.barChartData = {
+    labels: ['Completed', 'In Progress', 'Rejected'],
+    datasets: [
+      {
+        label: 'Projects',
+        data: [
+          this.completed.length,
+          this.progress.length,
+          this.reject.length
+        ],
+        backgroundColor: ['#28a745', '#ffc107', '#dc3545'],
+        borderRadius: 8
+      }
+    ]
+  };
+}
+
 
   openModal(data: any) {
     this.selectedNotification = { ...data };
