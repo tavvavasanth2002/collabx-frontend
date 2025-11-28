@@ -45,4 +45,21 @@ export class AllprojectsComponent {
         this.ngOnInit()
       })
     }
+    sortBy: string = '';
+sortDirection: boolean = true; // true = ascending, false = descending
+
+sortTable(type: string, list: any[]) {
+  this.sortBy = type;
+  this.sortDirection = !this.sortDirection;
+
+  list.sort((a, b) => {
+    const x = a[type];
+    const y = b[type];
+
+    if (x < y) return this.sortDirection ? -1 : 1;
+    if (x > y) return this.sortDirection ? 1 : -1;
+    return 0;
+  });
+}
+
 }

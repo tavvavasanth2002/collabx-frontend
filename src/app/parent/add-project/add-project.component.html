@@ -7,7 +7,7 @@
         </div>
         <div class="card-body">
           <form [formGroup]="projectForm" (ngSubmit)="addProject()">
-            
+
             <div class="mb-3">
               <label class="form-label">Project Name</label>
               <input type="text" class="form-control" formControlName="projectName" placeholder="Enter project name">
@@ -15,7 +15,38 @@
 
             <div class="mb-3">
               <label class="form-label">Project Description</label>
-              <textarea class="form-control" rows="3" formControlName="projectDescription" placeholder="Describe the project"></textarea>
+              <textarea class="form-control" rows="3" formControlName="projectDescription"
+                placeholder="Describe the project"></textarea>
+            </div>
+            <div class="mb-3">
+              <button type="button" class="btn btn-outline-primary" (click)="addTask()">
+                + New Task
+              </button>
+            </div>
+
+            <div formArrayName="tasks">
+              <div *ngFor="let task of tasks.controls; let i = index" [formGroupName]="i"
+                class="card mb-3 p-3 shadow-sm">
+                <div class="mb-2">
+                  <label class="form-label">Task Name</label>
+                  <input type="text" class="form-control" formControlName="taskName">
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">Task Description</label>
+                  <textarea class="form-control" rows="2" formControlName="taskDescription"></textarea>
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">Task Priority</label>
+                  <select class="form-select" formControlName="taskPriority">
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                  </select>
+                </div>
+                <button type="button" class="btn btn-sm btn-outline-danger" (click)="removeTask(i)">
+                  Remove Task
+                </button>
+              </div>
             </div>
 
             <div class="mb-3">
@@ -38,7 +69,7 @@
               <select class="form-select" formControlName="projectPriority">
                 <option value="" disabled selected>Select Company</option>
                 <option *ngFor="let c of companies">{{c.companyName}}</option>
-                
+
               </select>
             </div>
 

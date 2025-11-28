@@ -34,4 +34,7 @@ export class ParentService {
   listCompany(){
     return this.http.get('http://localhost:4300/listCompany')
   }
+  taskadd(obj:any){
+    return this.http.post('http:/localhost:4300/addtask',obj)
+  }
 }

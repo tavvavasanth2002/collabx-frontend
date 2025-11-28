@@ -7,10 +7,15 @@
       <table class="table table-bordered table-hover align-middle shadow-sm">
         <thead class="table-primary text-center">
           <tr>
-            <th>Project Name</th>
+            <th (click)="sortTable('projectName',progress)" style="cursor:pointer">
+              Project Name
+            </th>
+
             <th>Company</th>
             <th>Priority</th>
-            <th>Delivery Time</th>
+            <th (click)="sortTable('projectTime',progress)" style="cursor:pointer">
+              Delivery Time
+            </th>
             <th>Status</th>
             <th>Update</th>
           </tr>
@@ -24,7 +29,7 @@
             <td>
               <select [(ngModel)]="value" class="form-select form-select-sm">
                 <option selected>{{data.projectStatus}}</option>
-                
+
                 <option>completed</option>
                 <option>reject</option>
               </select>
@@ -44,10 +49,14 @@
       <table class="table table-bordered table-hover align-middle shadow-sm">
         <thead class="table-secondary text-center">
           <tr>
-            <th>Project Name</th>
+            <th (click)="sortTable('projectName',undecided)" style="cursor:pointer">
+              Project Name
+            </th>
             <th>Company</th>
             <th>Priority</th>
-            <th>Delivery Time</th>
+            <th (click)="sortTable('projectTime',undecided)" style="cursor:pointer">
+              Delivery Time
+            </th>
             <th>Status</th>
             <th>Update</th>
           </tr>
@@ -80,10 +89,15 @@
       <table class="table table-bordered table-hover align-middle shadow-sm">
         <thead class="table-success text-center">
           <tr>
-            <th>Project Name</th>
+            <th (click)="sortTable('projectName',completed)" style="cursor:pointer">
+              Project Name
+            </th>
+
             <th>Company</th>
             <th>Priority</th>
-            <th>Delivery Time</th>
+            <th (click)="sortTable('projectTime',completed )" style="cursor:pointer">
+              Delivery Time
+            </th>
             <th>Status</th>
           </tr>
         </thead>
@@ -108,10 +122,15 @@
       <table class="table table-bordered table-hover align-middle shadow-sm">
         <thead class="table-danger text-center">
           <tr>
-            <th>Project Name</th>
+            <th (click)="sortTable('projectName',reject)" style="cursor:pointer">
+              Project Name
+            </th>
+
             <th>Company</th>
             <th>Priority</th>
-            <th>Delivery Time</th>
+            <th (click)="sortTable('projectTime',reject)" style="cursor:pointer">
+              Delivery Time
+            </th>
             <th>Status</th>
           </tr>
         </thead>
